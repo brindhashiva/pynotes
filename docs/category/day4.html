@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>My Python Notes - Day4</title>
+
+    <link rel="stylesheet" href="https://brindhashiva.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://brindhashiva.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://brindhashiva.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://brindhashiva.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://brindhashiva.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://brindhashiva.github.io/pynotes">My Python Notes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+        
+
+            <article>
+                <a href="https://brindhashiva.github.io/pynotes/mongodb-persistence-pipelinepy.html"><h3 class="article-title">Mongodb-Persistence-Pipeline.Py</h3></a>
+<h6 class="subheader" title="2026-04-17T00:00:00-04:00">Fri 17 April 2026
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">pymongo</span> <span class="n">python</span><span class="o">-</span><span class="n">dotenv</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nx">Requirement</span><span class="w"> </span><span class="nx">already</span><span class="w"> </span><span class="nx">satisfied</span><span class="p">:</span><span class="w"> </span><span class="nx">pymongo</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Brindha</span><span class="w"> </span><span class="nx">Sivakumar</span><span class="err">\</span><span class="nx">miniconda3</span><span class="err">\</span><span class="nx">Lib</span><span class="err">\</span><span class="nx">site</span><span class="o">-</span><span class="nx">packages</span><span class="w"> </span><span class="p">(</span><span class="m m-Double">4.16.0</span><span class="p">)</span>
+<span class="nx">Requirement</span><span class="w"> </span><span class="nx">already</span><span class="w"> </span><span class="nx">satisfied</span><span class="p">:</span><span class="w"> </span><span class="nx">python</span><span class="o">-</span><span class="nx">dotenv</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Brindha</span><span class="w"> </span><span class="nx">Sivakumar</span><span class="err">\</span><span class="nx">miniconda3</span><span class="err">\</span><span class="nx">Lib</span><span class="err">\</span><span class="nx">site</span><span class="o">-</span><span class="nx">packages</span><span class="w"> </span><span class="p">(</span><span class="m m-Double">1.2.1</span><span class="p">)</span>
+<span class="nx">Requirement</span><span class="w"> </span><span class="nx">already</span><span class="w"> </span><span class="nx">satisfied</span><span class="p">:</span><span class="w"> </span><span class="nx">dnspython</span><span class="p">&lt;</span><span class="m m-Double">3.0.0</span><span class="p">,</span><span class="o">&gt;=</span><span class="m m-Double">2.6.1</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Brindha</span><span class="w"> </span><span class="nx">Sivakumar</span><span class="err">\</span><span class="nx">miniconda3</span><span class="err">\</span><span class="nx">Lib</span><span class="err">\</span><span class="nx">site</span><span class="o">-</span><span class="nx">packages</span><span class="w"> </span><span class="p">(</span><span class="nx">from</span><span class="w"> </span><span class="nx">pymongo</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="m m-Double">2.8.0</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Set Mongo URI</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MONGO_URI&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mongodb://localhost:27017/&quot;</span>
+
+<span class="n">mongo_uri</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;MONGO_URI&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mongo URI Loaded:&quot;</span><span class="p">,</span> <span class="n">mongo_uri</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mongo URI:&quot;</span><span class="p">,</span> <span class="n">mongo_uri</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Mongo URI Loaded: True
+Mongo URI: mongodb://localhost:27017/
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Connect MongoDB + Ping</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymongo</span><span class="w"> </span><span class="kn">import</span> <span class="n">MongoClient</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="n">mongo_uri</span><span class="p">)</span>
+
+<span class="n">client</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;ping&quot;</span><span class="p">)</span>
+
+<span class="n">db</span> <span class="o">=</span> <span class="n">client</span><span class="p">[</span><span class="s2">&quot;day4_persistence&quot;</span><span class="p">]</span>
+<span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="s2">&quot;entries&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connected to MongoDB&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Connected to MongoDB
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#insert_one</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">result_one</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">insert_one</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Brindha&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;task&quot;</span><span class="p">:</span> <span class="s2">&quot;MongoDB Connection&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Success&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;created_at&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inserted One ID:&quot;</span><span class="p">,</span> <span class="n">result_one</span><span class="o">.</span><span class="n">inserted_id</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Inserted One ID: 69e138c7b42b899c98557622
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#insert_many</span>
+<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;MongoDB Atlas&quot;</span><span class="p">,</span> <span class="s2">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;Beginner&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;PyMongo&quot;</span><span class="p">,</span> <span class="s2">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;Intermediate&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;Persistent Storage&quot;</span><span class="p">,</span> <span class="s2">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;Important&quot;</span><span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">result_many</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inserted Many IDs:&quot;</span><span class="p">,</span> <span class="n">result_many</span><span class="o">.</span><span class="n">inserted_ids</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Inserted Many IDs: [ObjectId(&#39;69e138f4b42b899c98557623&#39;), ObjectId(&#39;69e138f4b42b899c98557624&#39;), ObjectId(&#39;69e138f4b42b899c98557625&#39;)]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#find_one</span>
+<span class="n">single_doc</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Brindha&quot;</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">single_doc</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>{&#39;_id&#39;: ObjectId(&#39;69e138c7b42b899c98557622&#39;), &#39;name&#39;: &#39;Brindha&#39;, &#39;task&#39;: &#39;MongoDB Connection&#39;, &#39;status&#39;: &#39;Success&#39;, &#39;created_at&#39;: datetime.datetime(2026, 4, 17, 1, 0, 15, 316000)}
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#find with filter</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s2">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;Beginner&quot;</span><span class="p">})</span>
+
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>{&#39;_id&#39;: ObjectId(&#39;69e138f4b42b899c98557623&#39;), &#39;topic&#39;: &#39;MongoDB Atlas&#39;, &#39;level&#39;: &#39;Beginner&#39;}
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#projection</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;level&quot;</span><span class="p">:</span> <span class="s2">&quot;Beginner&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>{&#39;topic&#39;: &#39;MongoDB Atlas&#39;}
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Load AI model</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">llama_cpp</span><span class="w"> </span><span class="kn">import</span> <span class="n">Llama</span>
+
+<span class="n">model_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\Brindha Sivakumar\Downloads\tinyllama-1.1b-chat-v1.0-q4_k_m.gguf&quot;</span>
+
+<span class="n">llm</span> <span class="o">=</span> <span class="n">Llama</span><span class="p">(</span>
+    <span class="n">model_path</span><span class="o">=</span><span class="n">model_path</span><span class="p">,</span>
+    <span class="n">n_ctx</span><span class="o">=</span><span class="mi">2048</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model Loaded&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Model Loaded
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Generate AI output</span>
+<span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;Explain persistent storage in simple words&quot;</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">create_chat_completion</span><span class="p">(</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}],</span>
+    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">100</span>
+<span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="s2">&quot;choices&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;content&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AI Response:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nx">AI</span><span class="w"> </span><span class="nx">Response</span><span class="p">:</span>
+<span class="nx">Persistent</span><span class="w"> </span><span class="nx">storage</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">storage</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">can</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">accessed</span><span class="w"> </span><span class="nx">even</span><span class="w"> </span><span class="nx">after</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">computer</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">device</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">turned</span><span class="w"> </span><span class="nx">off</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">powered</span><span class="w"> </span><span class="nx">off</span><span class="p">.</span><span class="w"> </span><span class="nx">It</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">storage</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">stores</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="nx">even</span><span class="w"> </span><span class="nx">when</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">computer</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">device</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">running</span><span class="p">.</span><span class="w"> </span><span class="nx">Persistent</span><span class="w"> </span><span class="nx">storage</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">typically</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">storing</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">essential</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">user</span><span class="err">&#39;</span><span class="nx">s</span><span class="w"> </span><span class="nx">work</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">personal</span><span class="w"> </span><span class="nx">use</span><span class="p">,</span><span class="w"> </span><span class="nx">such</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">documents</span><span class="p">,</span><span class="w"> </span><span class="nx">photos</span><span class="p">,</span><span class="w"> </span><span class="nx">music</span><span class="p">,</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">videos</span><span class="p">.</span><span class="w"> </span><span class="nx">Persistent</span><span class="w"> </span><span class="nx">storage</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">different</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">temporary</span><span class="w"> </span><span class="nx">storage</span><span class="p">,</span><span class="w"> </span><span class="nx">which</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">temporary</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">deleted</span><span class="w"> </span><span class="nx">when</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">computer</span><span class="w"> </span><span class="k">or</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Save AI output</span>
+<span class="n">collection</span><span class="o">.</span><span class="n">insert_one</span><span class="p">({</span>
+    <span class="s2">&quot;prompt&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">,</span>
+    <span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="n">response</span><span class="p">,</span>
+    <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;llama&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;created_at&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AI output saved&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>AI output saved
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Retrieve AI output</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;llama&quot;</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="err">&#39;</span><span class="nx">_id</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="nx">ObjectId</span><span class="p">(</span><span class="err">&#39;</span><span class="mi">69</span><span class="nx">e13a7cb42b899c98557626</span><span class="err">&#39;</span><span class="p">),</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">prompt</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Explain</span><span class="w"> </span><span class="nx">persistent</span><span class="w"> </span><span class="nx">storage</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">simple</span><span class="w"> </span><span class="nx">words</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">response</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Persistent storage is a type of storage that can be accessed even after the computer or device is turned off or powered off. It is a type of storage that stores data even when the computer or device is not running. Persistent storage is typically used for storing data that is essential for the user&#39;s work or personal use, such as documents, photos, music, and videos. Persistent storage is different from temporary storage, which is used for temporary data that is deleted when the computer or&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">source</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">llama</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">created_at</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="nx">datetime</span><span class="p">.</span><span class="nx">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">872000</span><span class="p">)}</span>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 10</strong></p><p class="subheader">Category: <a href="https://brindhashiva.github.io/pynotes/category/day4.html">Day4</a>
+
+</p>
+
+
+
+            </article>
+
+<div class="pagination-centered">
+<h6 class="subheader">Page 1 of 1</h6>
+
+<p>
+
+</p>
+</div>
+
+
+
+            <!-- /#posts-list -->
+
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://brindhashiva.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://brindhashiva.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://brindhashiva.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://brindhashiva.github.io/pynotes/category/day3.html">Day3</a></li>
+            <li><a href="https://brindhashiva.github.io/pynotes/category/day4.html">Day4</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/brindhashiva/">GitHub</a></li>
+            <li><a href="www.linkedin.com/in/brindha-shiva">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>My Python Notes by Brindha</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>
