@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Llama-Mongodb-Ai-System</title>
+
+    <link rel="stylesheet" href="https://brindhashiva.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://brindhashiva.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://brindhashiva.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://brindhashiva.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://brindhashiva.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://brindhashiva.github.io/pynotes">My Python Notes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://brindhashiva.github.io/pynotes/llama-mongodb-ai-system.html" rel="bookmark"
+        title="Permalink to Llama-Mongodb-Ai-System">Llama-Mongodb-Ai-System</a></h3>
+    </header>
+
+<h6 class="subheader" title="2026-04-16T00:00:00-04:00">Thu 16 April 2026
+</h6>
+
+
+    <div class="highlight"><pre><span></span><code><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">pymongo</span> <span class="n">llama</span><span class="o">-</span><span class="n">cpp</span><span class="o">-</span><span class="n">python</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nx">Requirement</span><span class="w"> </span><span class="nx">already</span><span class="w"> </span><span class="nx">satisfied</span><span class="p">:</span><span class="w"> </span><span class="nx">pymongo</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Brindha</span><span class="w"> </span><span class="nx">Sivakumar</span><span class="err">\</span><span class="nx">miniconda3</span><span class="err">\</span><span class="nx">Lib</span><span class="err">\</span><span class="nx">site</span><span class="o">-</span><span class="nx">packages</span><span class="w"> </span><span class="p">(</span><span class="m m-Double">4.16.0</span><span class="p">)</span>
+<span class="nx">Requirement</span><span class="w"> </span><span class="nx">already</span><span class="w"> </span><span class="nx">satisfied</span><span class="p">:</span><span class="w"> </span><span class="nx">llama</span><span class="o">-</span><span class="nx">cpp</span><span class="o">-</span><span class="nx">python</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Brindha</span><span class="w"> </span><span class="nx">Sivakumar</span><span class="err">\</span><span class="nx">miniconda3</span><span class="err">\</span><span class="nx">Lib</span><span class="err">\</span><span class="nx">site</span><span class="o">-</span><span class="nx">packages</span><span class="w"> </span><span class="p">(</span><span class="m m-Double">0.3.19</span><span class="p">)</span>
+<span class="nx">Requirement</span><span class="w"> </span><span class="nx">already</span><span class="w"> </span><span class="nx">satisfied</span><span class="p">:</span><span class="w"> </span><span class="nx">dnspython</span><span class="p">&lt;</span><span class="m m-Double">3.0.0</span><span class="p">,</span><span class="o">&gt;=</span><span class="m m-Double">2.6.1</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Brindha</span><span class="w"> </span><span class="nx">Sivakumar</span><span class="err">\</span><span class="nx">miniconda3</span><span class="err">\</span><span class="nx">Lib</span><span class="err">\</span><span class="nx">site</span><span class="o">-</span><span class="nx">packages</span><span class="w"> </span><span class="p">(</span><span class="nx">from</span><span class="w"> </span><span class="nx">pymongo</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="m m-Double">2.8.0</span><span class="p">)</span>
+<span class="nx">Requirement</span><span class="w"> </span><span class="nx">already</span><span class="w"> </span><span class="nx">satisfied</span><span class="p">:</span><span class="w"> </span><span class="nx">typing</span><span class="o">-</span><span class="nx">extensions</span><span class="o">&gt;=</span><span class="m m-Double">4.5.0</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Brindha</span><span class="w"> </span><span class="nx">Sivakumar</span><span class="err">\</span><span class="nx">miniconda3</span><span class="err">\</span><span class="nx">Lib</span><span class="err">\</span><span class="nx">site</span><span class="o">-</span><span class="nx">packages</span><span class="w"> </span><span class="p">(</span><span class="nx">from</span><span class="w"> </span><span class="nx">llama</span><span class="o">-</span><span class="nx">cpp</span><span class="o">-</span><span class="nx">python</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="m m-Double">4.15.0</span><span class="p">)</span>
+<span class="nx">Requirement</span><span class="w"> </span><span class="nx">already</span><span class="w"> </span><span class="nx">satisfied</span><span class="p">:</span><span class="w"> </span><span class="nx">numpy</span><span class="o">&gt;=</span><span class="m m-Double">1.20.0</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Brindha</span><span class="w"> </span><span class="nx">Sivakumar</span><span class="err">\</span><span class="nx">miniconda3</span><span class="err">\</span><span class="nx">Lib</span><span class="err">\</span><span class="nx">site</span><span class="o">-</span><span class="nx">packages</span><span class="w"> </span><span class="p">(</span><span class="nx">from</span><span class="w"> </span><span class="nx">llama</span><span class="o">-</span><span class="nx">cpp</span><span class="o">-</span><span class="nx">python</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="m m-Double">2.4.4</span><span class="p">)</span>
+<span class="nx">Requirement</span><span class="w"> </span><span class="nx">already</span><span class="w"> </span><span class="nx">satisfied</span><span class="p">:</span><span class="w"> </span><span class="nx">diskcache</span><span class="o">&gt;=</span><span class="m m-Double">5.6.1</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Brindha</span><span class="w"> </span><span class="nx">Sivakumar</span><span class="err">\</span><span class="nx">miniconda3</span><span class="err">\</span><span class="nx">Lib</span><span class="err">\</span><span class="nx">site</span><span class="o">-</span><span class="nx">packages</span><span class="w"> </span><span class="p">(</span><span class="nx">from</span><span class="w"> </span><span class="nx">llama</span><span class="o">-</span><span class="nx">cpp</span><span class="o">-</span><span class="nx">python</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="m m-Double">5.6.3</span><span class="p">)</span>
+<span class="nx">Requirement</span><span class="w"> </span><span class="nx">already</span><span class="w"> </span><span class="nx">satisfied</span><span class="p">:</span><span class="w"> </span><span class="nx">jinja2</span><span class="o">&gt;=</span><span class="m m-Double">2.11.3</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Brindha</span><span class="w"> </span><span class="nx">Sivakumar</span><span class="err">\</span><span class="nx">miniconda3</span><span class="err">\</span><span class="nx">Lib</span><span class="err">\</span><span class="nx">site</span><span class="o">-</span><span class="nx">packages</span><span class="w"> </span><span class="p">(</span><span class="nx">from</span><span class="w"> </span><span class="nx">llama</span><span class="o">-</span><span class="nx">cpp</span><span class="o">-</span><span class="nx">python</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="m m-Double">3.1.6</span><span class="p">)</span>
+<span class="nx">Requirement</span><span class="w"> </span><span class="nx">already</span><span class="w"> </span><span class="nx">satisfied</span><span class="p">:</span><span class="w"> </span><span class="nx">MarkupSafe</span><span class="o">&gt;=</span><span class="m m-Double">2.0</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Brindha</span><span class="w"> </span><span class="nx">Sivakumar</span><span class="err">\</span><span class="nx">miniconda3</span><span class="err">\</span><span class="nx">Lib</span><span class="err">\</span><span class="nx">site</span><span class="o">-</span><span class="nx">packages</span><span class="w"> </span><span class="p">(</span><span class="nx">from</span><span class="w"> </span><span class="nx">jinja2</span><span class="o">&gt;=</span><span class="m m-Double">2.11.3</span><span class="o">-&gt;</span><span class="nx">llama</span><span class="o">-</span><span class="nx">cpp</span><span class="o">-</span><span class="nx">python</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="m m-Double">3.0.3</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#MongoDB Connection</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymongo</span><span class="w"> </span><span class="kn">import</span> <span class="n">MongoClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="s2">&quot;mongodb://localhost:27017/&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">client</span><span class="p">[</span><span class="s2">&quot;memoryvault_ai&quot;</span><span class="p">]</span>
+<span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="s2">&quot;entries&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connected to MongoDB&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Connected to MongoDB
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Insert Data</span>
+<span class="n">collection</span><span class="o">.</span><span class="n">insert_one</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Brindha&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;task&quot;</span><span class="p">:</span> <span class="s2">&quot;Day 3 Pipeline from Python&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Success&quot;</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data inserted successfully&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Data inserted successfully
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Read Data</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>{&#39;_id&#39;: ObjectId(&#39;69e0d0fd97f365e15cf318bf&#39;), &#39;name&#39;: &#39;Brindha&#39;, &#39;project&#39;: &#39;MemoryVault AI&#39;, &#39;status&#39;: &#39;In Progress&#39;}
+{&#39;_id&#39;: ObjectId(&#39;69e0d15597f365e15cf318c0&#39;), &#39;title&#39;: &#39;Learning Log&#39;, &#39;content&#39;: &#39;Worked on MongoDB + AI pipeline&#39;, &#39;created_at&#39;: datetime.datetime(2026, 4, 16, 17, 38, 53, 714000)}
+{&#39;_id&#39;: ObjectId(&#39;69e0d34a97f365e15cf318c3&#39;), &#39;title&#39;: &#39;Learning Log&#39;, &#39;content&#39;: &#39;Worked on AI + MongoDB pipeline&#39;, &#39;created_at&#39;: datetime.datetime(2026, 4, 16, 17, 47, 14, 429000)}
+{&#39;_id&#39;: ObjectId(&#39;69e11a8a4b0b1db8f40f16c9&#39;), &#39;name&#39;: &#39;Brindha&#39;, &#39;task&#39;: &#39;Day 3 Pipeline from Python&#39;, &#39;status&#39;: &#39;Success&#39;}
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Update Data</span>
+<span class="n">collection</span><span class="o">.</span><span class="n">update_one</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Brindha&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;$set&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;In Progress&quot;</span><span class="p">}}</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data updated successfully&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Data updated successfully
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Read Updated Data</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>{&#39;_id&#39;: ObjectId(&#39;69e0d0fd97f365e15cf318bf&#39;), &#39;name&#39;: &#39;Brindha&#39;, &#39;project&#39;: &#39;MemoryVault AI&#39;, &#39;status&#39;: &#39;In Progress&#39;}
+{&#39;_id&#39;: ObjectId(&#39;69e0d15597f365e15cf318c0&#39;), &#39;title&#39;: &#39;Learning Log&#39;, &#39;content&#39;: &#39;Worked on MongoDB + AI pipeline&#39;, &#39;created_at&#39;: datetime.datetime(2026, 4, 16, 17, 38, 53, 714000)}
+{&#39;_id&#39;: ObjectId(&#39;69e0d34a97f365e15cf318c3&#39;), &#39;title&#39;: &#39;Learning Log&#39;, &#39;content&#39;: &#39;Worked on AI + MongoDB pipeline&#39;, &#39;created_at&#39;: datetime.datetime(2026, 4, 16, 17, 47, 14, 429000)}
+{&#39;_id&#39;: ObjectId(&#39;69e11a8a4b0b1db8f40f16c9&#39;), &#39;name&#39;: &#39;Brindha&#39;, &#39;task&#39;: &#39;Day 3 Pipeline from Python&#39;, &#39;status&#39;: &#39;Success&#39;}
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Delete Data</span>
+<span class="n">collection</span><span class="o">.</span><span class="n">delete_one</span><span class="p">({</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;In Progress&quot;</span><span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data deleted successfully&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Data deleted successfully
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Final Check After Delete</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>{&#39;_id&#39;: ObjectId(&#39;69e0d15597f365e15cf318c0&#39;), &#39;title&#39;: &#39;Learning Log&#39;, &#39;content&#39;: &#39;Worked on MongoDB + AI pipeline&#39;, &#39;created_at&#39;: datetime.datetime(2026, 4, 16, 17, 38, 53, 714000)}
+{&#39;_id&#39;: ObjectId(&#39;69e0d34a97f365e15cf318c3&#39;), &#39;title&#39;: &#39;Learning Log&#39;, &#39;content&#39;: &#39;Worked on AI + MongoDB pipeline&#39;, &#39;created_at&#39;: datetime.datetime(2026, 4, 16, 17, 47, 14, 429000)}
+{&#39;_id&#39;: ObjectId(&#39;69e11a8a4b0b1db8f40f16c9&#39;), &#39;name&#39;: &#39;Brindha&#39;, &#39;task&#39;: &#39;Day 3 Pipeline from Python&#39;, &#39;status&#39;: &#39;Success&#39;}
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Insert with Date</span>
+<span class="n">collection</span><span class="o">.</span><span class="n">insert_one</span><span class="p">({</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Learning Log&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Worked on MongoDB and AI pipeline&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;created_at&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inserted with date&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Inserted with date
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Date Query</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span>
+    <span class="s2">&quot;created_at&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;$gte&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s2">&quot;$lte&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>{&#39;_id&#39;: ObjectId(&#39;69e0d15597f365e15cf318c0&#39;), &#39;title&#39;: &#39;Learning Log&#39;, &#39;content&#39;: &#39;Worked on MongoDB + AI pipeline&#39;, &#39;created_at&#39;: datetime.datetime(2026, 4, 16, 17, 38, 53, 714000)}
+{&#39;_id&#39;: ObjectId(&#39;69e0d34a97f365e15cf318c3&#39;), &#39;title&#39;: &#39;Learning Log&#39;, &#39;content&#39;: &#39;Worked on AI + MongoDB pipeline&#39;, &#39;created_at&#39;: datetime.datetime(2026, 4, 16, 17, 47, 14, 429000)}
+{&#39;_id&#39;: ObjectId(&#39;69e11c4f4b0b1db8f40f16ca&#39;), &#39;title&#39;: &#39;Learning Log&#39;, &#39;content&#39;: &#39;Worked on MongoDB and AI pipeline&#39;, &#39;created_at&#39;: datetime.datetime(2026, 4, 16, 22, 58, 47, 448000)}
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Field Operators</span>
+<span class="c1">#$set</span>
+<span class="n">collection</span><span class="o">.</span><span class="n">update_one</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Learning Log&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;$set&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Updated MongoDB and AI pipeline notes&quot;</span><span class="p">}}</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Used $set&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Used $set
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#$inc</span>
+<span class="n">collection</span><span class="o">.</span><span class="n">update_one</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Learning Log&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;$inc&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;views&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Used $inc&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Used $inc
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#$push</span>
+<span class="n">collection</span><span class="o">.</span><span class="n">update_one</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Learning Log&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;$push&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="s2">&quot;mongodb&quot;</span><span class="p">}}</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Used $push&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Used $push
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#$unset</span>
+<span class="n">collection</span><span class="o">.</span><span class="n">update_one</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Learning Log&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;$unset&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;views&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}}</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Used $unset&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Used $unset
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Check final document</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>{&#39;_id&#39;: ObjectId(&#39;69e0d15597f365e15cf318c0&#39;), &#39;title&#39;: &#39;Learning Log&#39;, &#39;content&#39;: &#39;Updated MongoDB and AI pipeline notes&#39;, &#39;created_at&#39;: datetime.datetime(2026, 4, 16, 17, 38, 53, 714000), &#39;tags&#39;: [&#39;mongodb&#39;]}
+{&#39;_id&#39;: ObjectId(&#39;69e0d34a97f365e15cf318c3&#39;), &#39;title&#39;: &#39;Learning Log&#39;, &#39;content&#39;: &#39;Worked on AI + MongoDB pipeline&#39;, &#39;created_at&#39;: datetime.datetime(2026, 4, 16, 17, 47, 14, 429000)}
+{&#39;_id&#39;: ObjectId(&#39;69e11a8a4b0b1db8f40f16c9&#39;), &#39;name&#39;: &#39;Brindha&#39;, &#39;task&#39;: &#39;Day 3 Pipeline from Python&#39;, &#39;status&#39;: &#39;Success&#39;}
+{&#39;_id&#39;: ObjectId(&#39;69e11c4f4b0b1db8f40f16ca&#39;), &#39;title&#39;: &#39;Learning Log&#39;, &#39;content&#39;: &#39;Worked on MongoDB and AI pipeline&#39;, &#39;created_at&#39;: datetime.datetime(2026, 4, 16, 22, 58, 47, 448000)}
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Load GGUF Model</span>
+<span class="n">model_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\Brindha Sivakumar\Downloads\tinyllama-1.1b-chat-v1.0-q4_k_m.gguf&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Load model</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">llama_cpp</span><span class="w"> </span><span class="kn">import</span> <span class="n">Llama</span>
+
+<span class="n">model_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\Brindha Sivakumar\Downloads\tinyllama-1.1b-chat-v1.0-q4_k_m.gguf&quot;</span>
+
+<span class="n">llm</span> <span class="o">=</span> <span class="n">Llama</span><span class="p">(</span>
+    <span class="n">model_path</span><span class="o">=</span><span class="n">model_path</span><span class="p">,</span>
+    <span class="n">n_ctx</span><span class="o">=</span><span class="mi">2048</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model loaded successfully&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">Model</span><span class="w"> </span><span class="n">loaded</span><span class="w"> </span><span class="n">successfully</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Basic prompt</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">create_chat_completion</span><span class="p">(</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Explain AI in simple words&quot;</span><span class="p">}</span>
+    <span class="p">],</span>
+    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">80</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;choices&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;content&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>AI (Artificial Intelligence) is a field of computer science that involves the development of machines that can think and behave like humans. It involves the use of algorithms, machine learning, and other technologies to create intelligent systems that can perform tasks that are typically performed by humans, such as language translation, image recognition, and chatbots.
+
+AI can be divided into two main
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Temperature, top-p, max tokens</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">create_chat_completion</span><span class="p">(</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Explain vector database&quot;</span><span class="p">}</span>
+    <span class="p">],</span>
+    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
+    <span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+    <span class="n">top_p</span><span class="o">=</span><span class="mf">0.9</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;choices&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;content&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nx">A</span><span class="w"> </span><span class="nx">vector</span><span class="w"> </span><span class="nx">database</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">database</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">stores</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">manages</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">format</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">based</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">vectors</span><span class="p">,</span><span class="w"> </span><span class="nx">which</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="nx">mathematical</span><span class="w"> </span><span class="nx">objects</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">represent</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">point</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">space</span><span class="p">.</span><span class="w"> </span><span class="nx">These</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="nx">points</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="nx">known</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">vectors</span><span class="p">,</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">database</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">designed</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">store</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">manipulate</span><span class="w"> </span><span class="nx">these</span><span class="w"> </span><span class="nx">vectors</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">specific</span><span class="w"> </span><span class="nx">way</span><span class="p">.</span>
+
+<span class="nx">In</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">vector</span><span class="w"> </span><span class="nx">database</span><span class="p">,</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">stored</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">matrix</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">grid</span><span class="w"> </span><span class="nx">format</span><span class="p">,</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="nx">each</span><span class="w"> </span><span class="nx">row</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Connect MongoDB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymongo</span><span class="w"> </span><span class="kn">import</span> <span class="n">MongoClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="s2">&quot;mongodb://localhost:27017/&quot;</span><span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">client</span><span class="p">[</span><span class="s2">&quot;memoryvault_ai&quot;</span><span class="p">]</span>
+<span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="s2">&quot;entries&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MongoDB Connected&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>MongoDB Connected
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#AI → MongoDB</span>
+<span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;What is stateful AI?&quot;</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">create_chat_completion</span><span class="p">(</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}</span>
+    <span class="p">],</span>
+    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">temperature</span><span class="o">=</span><span class="mf">0.3</span>
+<span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="s2">&quot;choices&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;content&quot;</span><span class="p">]</span>
+
+<span class="n">collection</span><span class="o">.</span><span class="n">insert_one</span><span class="p">({</span>
+    <span class="s2">&quot;prompt&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">,</span>
+    <span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="n">response</span><span class="p">,</span>
+    <span class="s2">&quot;created_at&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saved to MongoDB&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nx">Saved</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">MongoDB</span>
+<span class="nx">Stateful</span><span class="w"> </span><span class="nx">AI</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">machine</span><span class="w"> </span><span class="nx">learning</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">involves</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">use</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">physical</span><span class="w"> </span><span class="nx">hardware</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">software</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">store</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">process</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="w"> </span><span class="nx">It</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">different</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">stateless</span><span class="w"> </span><span class="nx">AI</span><span class="p">,</span><span class="w"> </span><span class="nx">which</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">form</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">machine</span><span class="w"> </span><span class="nx">learning</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">does</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">involve</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">use</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">physical</span><span class="w"> </span><span class="nx">hardware</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">software</span><span class="p">.</span>
+
+<span class="nx">In</span><span class="w"> </span><span class="nx">stateful</span><span class="w"> </span><span class="nx">AI</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">stored</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">physical</span><span class="w"> </span><span class="nx">device</span><span class="p">,</span><span class="w"> </span><span class="nx">such</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">server</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">storage</span><span class="w"> </span><span class="nx">device</span><span class="p">,</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">processed</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">software</span><span class="w"> </span><span class="nx">running</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">device</span><span class="p">.</span><span class="w"> </span><span class="nx">This</span><span class="w"> </span><span class="nx">allows</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">greater</span><span class="w"> </span><span class="nx">scalability</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">flexibility</span><span class="p">,</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">the</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Retrieve stored data</span>
+<span class="n">last_doc</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;created_at&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">last_doc</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="err">&#39;</span><span class="nx">_id</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="nx">ObjectId</span><span class="p">(</span><span class="err">&#39;</span><span class="mi">69</span><span class="nx">e121b24b0b1db8f40f16cc</span><span class="err">&#39;</span><span class="p">),</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">prompt</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">What</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">stateful</span><span class="w"> </span><span class="nx">AI</span><span class="p">?</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">response</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">Stateful</span><span class="w"> </span><span class="nx">AI</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">machine</span><span class="w"> </span><span class="nx">learning</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">involves</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">use</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">physical</span><span class="w"> </span><span class="nx">hardware</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">software</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">store</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">process</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="w"> </span><span class="nx">It</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">different</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">stateless</span><span class="w"> </span><span class="nx">AI</span><span class="p">,</span><span class="w"> </span><span class="nx">which</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">form</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">machine</span><span class="w"> </span><span class="nx">learning</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">does</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nx">involve</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">use</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">physical</span><span class="w"> </span><span class="nx">hardware</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">software</span><span class="p">.</span><span class="err">\</span><span class="nx">n</span><span class="err">\</span><span class="nx">nIn</span><span class="w"> </span><span class="nx">stateful</span><span class="w"> </span><span class="nx">AI</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">stored</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">physical</span><span class="w"> </span><span class="nx">device</span><span class="p">,</span><span class="w"> </span><span class="nx">such</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">server</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">storage</span><span class="w"> </span><span class="nx">device</span><span class="p">,</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">processed</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">software</span><span class="w"> </span><span class="nx">running</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">device</span><span class="p">.</span><span class="w"> </span><span class="nx">This</span><span class="w"> </span><span class="nx">allows</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">greater</span><span class="w"> </span><span class="nx">scalability</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">flexibility</span><span class="p">,</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">the</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="err">&#39;</span><span class="nx">created_at</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="nx">datetime</span><span class="p">.</span><span class="nx">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">46</span><span class="p">,</span><span class="w"> </span><span class="mi">139000</span><span class="p">)}</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Reuse memory</span>
+<span class="n">context</span> <span class="o">=</span> <span class="n">last_doc</span><span class="p">[</span><span class="s2">&quot;response&quot;</span><span class="p">]</span>
+
+<span class="n">new_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Based on this: </span><span class="si">{</span><span class="n">context</span><span class="si">}</span><span class="s2"> explain in one short sentence&quot;</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">create_chat_completion</span><span class="p">(</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">new_prompt</span><span class="p">}</span>
+    <span class="p">],</span>
+    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">60</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;choices&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;content&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nv">In</span><span class="w"> </span><span class="nv">stateful</span><span class="w"> </span><span class="nv">AI</span>,<span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">stored</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">physical</span><span class="w"> </span><span class="nv">device</span>,<span class="w"> </span><span class="nv">such</span><span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">server</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">storage</span><span class="w"> </span><span class="nv">device</span>,<span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">processed</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">software</span><span class="w"> </span><span class="nv">running</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="nv">that</span><span class="w"> </span><span class="nv">device</span>.<span class="w"> </span><span class="nv">This</span><span class="w"> </span><span class="nv">allows</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">greater</span><span class="w"> </span><span class="nv">scalability</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">flexibility</span>,<span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">explain</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">one</span><span class="w"> </span><span class="nv">short</span><span class="w"> </span><span class="nv">sentence</span>.
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Store multiple entries</span>
+<span class="n">prompts</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;What is AI?&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;What is Machine Learning?&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;What is Deep Learning?&quot;</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">prompts</span><span class="p">:</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">create_chat_completion</span><span class="p">(</span>
+        <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">p</span><span class="p">}],</span>
+        <span class="n">max_tokens</span><span class="o">=</span><span class="mi">80</span>
+    <span class="p">)</span>
+
+    <span class="n">collection</span><span class="o">.</span><span class="n">insert_one</span><span class="p">({</span>
+        <span class="s2">&quot;prompt&quot;</span><span class="p">:</span> <span class="n">p</span><span class="p">,</span>
+        <span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="n">output</span><span class="p">[</span><span class="s2">&quot;choices&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;content&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;created_at&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiple entries stored&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Multiple entries stored
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Query by date</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">({</span>
+    <span class="s2">&quot;created_at&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;$gte&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s2">&quot;$lte&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="s1">&#39;_id&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">ObjectId</span><span class="p">(</span><span class="s1">&#39;69e0d15597f365e15cf318c0&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;title&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Learning Log&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;content&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Updated MongoDB and AI pipeline notes&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;created_at&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="mi">38</span><span class="p">,</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w"> </span><span class="mi">714000</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;tags&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;mongodb&#39;</span><span class="p">]}</span>
+<span class="p">{</span><span class="s1">&#39;_id&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">ObjectId</span><span class="p">(</span><span class="s1">&#39;69e0d34a97f365e15cf318c3&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;title&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Learning Log&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;content&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Worked on AI + MongoDB pipeline&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;created_at&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> </span><span class="mi">429000</span><span class="p">)}</span>
+<span class="p">{</span><span class="s1">&#39;_id&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">ObjectId</span><span class="p">(</span><span class="s1">&#39;69e11c4f4b0b1db8f40f16ca&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;title&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Learning Log&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;content&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Worked on MongoDB and AI pipeline&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;created_at&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="mi">58</span><span class="p">,</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w"> </span><span class="mi">448000</span><span class="p">)}</span>
+<span class="p">{</span><span class="s1">&#39;_id&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">ObjectId</span><span class="p">(</span><span class="s1">&#39;69e121b24b0b1db8f40f16cc&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;prompt&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;What is stateful AI?&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;response&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Stateful AI is a type of machine learning that involves the use of physical hardware and software to store and process data. It is different from stateless AI, which is a form of machine learning that does not involve the use of physical hardware or software.</span><span class="se">\n\n</span><span class="s1">In stateful AI, data is stored in a physical device, such as a server or a storage device, and processed by the software running on that device. This allows for greater scalability and flexibility, as the&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;created_at&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">46</span><span class="p">,</span><span class="w"> </span><span class="mi">139000</span><span class="p">)}</span>
+<span class="p">{</span><span class="s1">&#39;_id&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">ObjectId</span><span class="p">(</span><span class="s1">&#39;69e122094b0b1db8f40f16cd&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;prompt&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;What is AI?&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;response&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Artificial Intelligence (AI) is a field of computer science that involves the development of computer systems that can exhibit intelligent behavior, such as problem-solving, decision-making, and learning. AI is a rapidly growing field that has revolutionized many aspects of modern life, including healthcare, finance, and transportation.</span><span class="se">\n\n</span><span class="s1">AI can be divided into two main&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;created_at&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">594000</span><span class="p">)}</span>
+<span class="p">{</span><span class="s1">&#39;_id&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">ObjectId</span><span class="p">(</span><span class="s1">&#39;69e1220d4b0b1db8f40f16ce&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;prompt&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;What is Machine Learning?&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;response&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Machine Learning (ML) is a field of artificial intelligence that involves the development of algorithms and models that can learn from data without being explicitly programmed. ML is used in various applications, including:</span><span class="se">\n\n</span><span class="s1">1. Predictive Analytics: ML algorithms are used to analyze large datasets to identify patterns and trends that can be used to make predictions.</span><span class="se">\n\n</span><span class="s1">2. Natural Language Processing (&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;created_at&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="mi">402000</span><span class="p">)}</span>
+<span class="p">{</span><span class="s1">&#39;_id&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">ObjectId</span><span class="p">(</span><span class="s1">&#39;69e122104b0b1db8f40f16cf&#39;</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;prompt&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;What is Deep Learning?&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;response&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Deep Learning is a type of machine learning that involves the use of deep neural networks, which are composed of multiple layers of neurons that can learn complex patterns and relationships from data. The term &quot;deep&quot; refers to the number of layers in the neural network, while &quot;learning&quot; refers to the process of training the network to make predictions based on the data it has been exposed to.</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;created_at&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">733000</span><span class="p">)}</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#Force JSON output</span>
+<span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Give output only in JSON format:</span>
+
+<span class="s2">{</span>
+<span class="s2">  &quot;top_text&quot;: &quot;...&quot;,</span>
+<span class="s2">  &quot;bottom_text&quot;: &quot;...&quot;</span>
+<span class="s2">}</span>
+
+<span class="s2">Explain vector database</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">create_chat_completion</span><span class="p">(</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}</span>
+    <span class="p">],</span>
+    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span>
+    <span class="n">temperature</span><span class="o">=</span><span class="mf">0.2</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;choices&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;content&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nx">A</span><span class="w"> </span><span class="nx">vector</span><span class="w"> </span><span class="nx">database</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">database</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">stores</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">manages</span><span class="w"> </span><span class="nx">vector</span><span class="w"> </span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="nx">which</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">represented</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">points</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">coordinates</span><span class="p">.</span><span class="w"> </span><span class="nx">The</span><span class="w"> </span><span class="nx">vector</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="nx">can</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">represented</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">points</span><span class="p">,</span><span class="w"> </span><span class="nx">lines</span><span class="p">,</span><span class="w"> </span><span class="nx">polygons</span><span class="p">,</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">other</span><span class="w"> </span><span class="nx">geometric</span><span class="w"> </span><span class="nx">shapes</span><span class="p">.</span>
+
+<span class="nx">A</span><span class="w"> </span><span class="nx">vector</span><span class="w"> </span><span class="nx">database</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">typically</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">applications</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">require</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">storage</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">manipulation</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">large</span><span class="w"> </span><span class="nx">amounts</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">vector</span><span class="w"> </span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="nx">such</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">mapping</span><span class="p">,</span><span class="w"> </span><span class="nx">geographic</span><span class="w"> </span><span class="nx">information</span><span class="w"> </span><span class="nx">systems</span><span class="w"> </span><span class="p">(</span><span class="nx">GIS</span><span class="p">),</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="mi">3</span><span class="nx">D</span><span class="w"> </span><span class="nx">modeling</span><span class="p">.</span><span class="w"> </span><span class="nx">Vector</span><span class="w"> </span><span class="nx">databases</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="nx">often</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">combination</span><span class="w"> </span><span class="nx">with</span><span class="w"> </span><span class="nx">other</span><span class="w"> </span><span class="nx">types</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">databases</span><span class="p">,</span><span class="w"> </span><span class="nx">such</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">relational</span><span class="w"> </span><span class="nx">databases</span><span class="p">,</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">provide</span>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 25</strong></p>
+<p class="subheader">Category: <a href="https://brindhashiva.github.io/pynotes/category/day3.html">Day3</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://brindhashiva.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://brindhashiva.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://brindhashiva.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://brindhashiva.github.io/pynotes/category/day3.html">Day3</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/brindhashiva/">GitHub</a></li>
+            <li><a href="www.linkedin.com/in/brindha-shiva">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>My Python Notes by Brindha</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>

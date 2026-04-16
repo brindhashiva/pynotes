@@ -1,22 +1,17 @@
 ---
 title: Hello
-date: 2026-04-15
+date: 2026-04-16
 author: Your Name
-cell_count: 2
+cell_count: 1
 score: 0
 ---
 
 ```python
-print("hello")
+print("Welcome to my pynotes")
 ```
 
-    hello
+    Welcome to my pynotes
     
-
-
-```python
-
-```
 
 
 ---
