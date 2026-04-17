@@ -61,7 +61,7 @@
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="c1">#Set Mongo URI</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">os</span>
 
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MONGO_URI&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mongodb://localhost:27017/&quot;</span>
 
@@ -76,7 +76,7 @@ Mongo URI: mongodb://localhost:27017/
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="c1">#Connect MongoDB + Ping</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">pymongo</span><span class="w"> </span><span class="kn">import</span> <span class="n">MongoClient</span>
+<span class="kn">from</span> <span class="nn">pymongo</span> <span class="kn">import</span> <span class="n">MongoClient</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="n">mongo_uri</span><span class="p">)</span>
 
@@ -92,7 +92,7 @@ Mongo URI: mongodb://localhost:27017/
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="c1">#insert_one</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="n">result_one</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">insert_one</span><span class="p">({</span>
     <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Brindha&quot;</span><span class="p">,</span>
@@ -154,7 +154,7 @@ Mongo URI: mongodb://localhost:27017/
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="c1">#Load AI model</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">llama_cpp</span><span class="w"> </span><span class="kn">import</span> <span class="n">Llama</span>
+<span class="kn">from</span> <span class="nn">llama_cpp</span> <span class="kn">import</span> <span class="n">Llama</span>
 
 <span class="n">model_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\Brindha Sivakumar\Downloads\tinyllama-1.1b-chat-v1.0-q4_k_m.gguf&quot;</span>
 
@@ -234,6 +234,7 @@ Mongo URI: mongodb://localhost:27017/
 		
         <h5 class="sidebar-title">Categories</h5>
         <ul class="side-nav">
+            <li><a href="https://brindhashiva.github.io/pynotes/category/7daychallenge.html">7daychallenge</a></li>
             <li><a href="https://brindhashiva.github.io/pynotes/category/basics.html">basics</a></li>
             <li><a href="https://brindhashiva.github.io/pynotes/category/day3.html">Day3</a></li>
             <li><a href="https://brindhashiva.github.io/pynotes/category/day4.html">Day4</a></li>
